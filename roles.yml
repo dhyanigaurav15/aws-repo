@@ -3,7 +3,7 @@
   connection: local
   gather_facts: False
   
-- Name: Ec2 get facts
-  ec2_instance_facts:
+- name: Ec2 get facts
+  ec2_instance_info:
     filters:
       instance-state-name: [ "running" ]
