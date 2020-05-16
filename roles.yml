@@ -2,13 +2,7 @@
 - hosts: localhost
   connection: local
   gather_facts: False
-
-- name: Connect AWS account
-    ec2_instance_facts:
-            aws_access_key: "{{ec2_access_key}}"
-            aws_secret_key: "{{ec2_secret_key}}"
-            region: "us-east-1"
-  register: result
-
-- debug:
-    vars: result
+  
+- ec2_instance_info:
+    filters:
+      instance-state-name: [ "running" ]
