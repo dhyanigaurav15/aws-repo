@@ -4,6 +4,6 @@
   gather_facts: False
   
 - Name: Ec2 get facts
-    ec2_instance_facts:
-      filters:
-        instance-state-name: [ "running" ]
+  ec2_instance_facts:
+    filters:
+      instance-state-name: [ "running" ]
