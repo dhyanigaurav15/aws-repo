@@ -5,7 +5,8 @@
       instance-state-name: [ "running" ]
   register: ec2
 
-- set-fact: ec2id="{{ ec2.stdout_lines }}"
+- set-fact: 
+      ec2id: "{{ ec2.stdout_lines }}"
   
 - name: Print name
   debug:
