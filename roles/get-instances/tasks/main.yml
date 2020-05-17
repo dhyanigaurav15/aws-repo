@@ -1,8 +1,8 @@
 - name: Ec2 get facts
-          ec2_instance_info:
-           region: "us-east-1"
-           filters:
-            instance-state-name: [ "running","instance_id" ]
+  ec2_instance_info:
+    region: "us-east-1"
+    filters:
+      instance-state-name: [ "running","instance_id" ]
   register: ec2
 - name: Print name
     debug:
