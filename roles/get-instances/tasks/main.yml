@@ -3,8 +3,10 @@
     region: "us-east-1"
     filters:
       instance-state-name: [ "running" ]
-  register: ec2
+  register: ec2_result
+  
+  set_fact: ec2_id="{{ ec2_result.stdout_lines|instance_id }}"
   
 - name: Print name
   debug:
-      var: ec2id
+      var: ec2="{{ec2_id}}"
