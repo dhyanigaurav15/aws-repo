@@ -2,7 +2,7 @@
   ec2_instance_info:
     region: "us-east-1"
     filters:
-      instance-state-name: [ "running","instance_id" ]
+      instance-state-name: [ "running" ]
   register: ec2
 
 - set-fact: ec2-id="{{ ec2.stdout_lines|instance_id }}"
