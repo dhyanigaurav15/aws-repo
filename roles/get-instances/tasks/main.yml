@@ -5,9 +5,10 @@
       instance-state-name: [ "running","instance_id" ]
   register: ec2_result
   
-- name: set fact for ec2
-  set_fact: ec2_id="{{ ec2_result.stdout_lines|instance_id }}"
+#- name: set fact for ec2
+#  set_fact: ec2_id="{{ ec2_result.stdout_lines|instance_id }}"
   
 - name: Print name
   debug:
-      var: ec2="{{ec2_id}}"
+      var: ec2_result
+      #="{{ec2_id}}"
