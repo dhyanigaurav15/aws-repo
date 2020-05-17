@@ -1,9 +1,13 @@
-
 - hosts: localhost
   connection: local
   gather_facts: False
-  
-- name: Ec2 get facts
-  ec2_instance_info:
-    filters:
-      instance-state-name: [ "running" ]
+  tasks:
+        - name: Ec2 get facts
+          ec2_instance_info:
+                    filters:
+                        instance-state-name: [ "running","instance_id" ]
+          register: ec2
+        - name: Print name
+          debug:
+               var: ec2
+
