@@ -6,7 +6,7 @@
   register: ec2_result
   
 - name: set fact for ec2
-  set_fact: ec2_id="{{ ec2_result.stdout_lines|"instance_id" }}"
+  set_fact: ec2_id="{{ ec2_result.stdout_lines|i-* }}"
   
 - name: Print name
   debug:
