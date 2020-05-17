@@ -4,6 +4,9 @@
     filters:
       instance-state-name: [ "running","instance_id" ]
   register: ec2
+
+- set-fact: ec2-id={{ ec2.stdout_lines|instance_id,vpc_id }}
+  
 - name: Print name
   debug:
-      var: ec2
+      var: ec2-id
