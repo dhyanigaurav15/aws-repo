@@ -5,5 +5,5 @@
       instance-state-name: [ "running","instance_id" ]
   register: ec2
 - name: Print name
-    debug:
+  debug:
       var: ec2
